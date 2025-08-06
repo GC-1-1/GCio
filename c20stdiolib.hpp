@@ -48,17 +48,17 @@ public:
     static std::string read_line() {
         std::string line;
         if (!std::getline(std::cin, line)) {
-            throw IOError("Failed to read from console");
+            抛出 IO错误("无法从控制台读取");
         }
-        return line;
+        返回 行;
     }
 
     // 安全读取类型化值
-    template <Readable T>
-    static T read() {
-        T value;
-        if (!(std::cin >> value)) {
-            throw IOError("Failed to read value from console");
+    模板 <Readable可读 T>
+    静态 T 读取 (){) 
+        T 值;T value;
+        如果 (!(标准输入 >> value)) {
+            抛出 IOError("无法从控制台读取值");
         }
         // 清除换行符
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
